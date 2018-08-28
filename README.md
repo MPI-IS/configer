@@ -11,7 +11,7 @@ That's why I packageg my solution to this issue. Configer basically gives you a 
 - add different settings while choosing to overload previous one.
 Overall Configer will be a sleek way to disentangle settings away from the mechanics. An exact copy of the above code will be:
 ```
-from Configer import Configer
+from configer import Configer
 Config = Configer(default_ps_fname='c:\\tomorrow.ini')
 Config.option
 ```
