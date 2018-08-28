@@ -1,21 +1,22 @@
-**Configer** helps with easy configuration of arguments in a python code. When Python programs grow large, one would eventually need a way to load configurations through a file. The common answer to this would by Python's ConfigParser. But at least I find the resul of using ConfigParse an ugly code:
+**Configer** helps with easy configuration of arguments in a python code. When Python programs grow large, one would eventually need a way to load configurations through a file. The common answer to this would by Python's ConfigParser. But at least I find the result of using ConfigParse an ugly code:
 ```
 import ConfigParser
 Config = ConfigParser.ConfigParser()
 Config.read("c:\\tomorrow.ini")
 Config.get(section, option)
 ```
-That's why I packageg my solution to this issue. Configer basically gives you a  flattened ConfigParser with extra functionality:
+That's why I packaged my solution to this issue. Configer basically gives you a  flattened ConfigParser with extra functionality:
 - dot-access of values in the settings file
 - dump settings to a file for later use
 - add different settings while choosing to overload previous one.
+
 Overall Configer will be a sleek way to disentangle settings away from the mechanics. An exact copy of the above code will be:
 ```
 from configer import Configer
 Config = Configer(default_ps_fname='c:\\tomorrow.ini')
 Config.option
 ```
-Note that you don't have sections anymore and access option with a dot-access approach. Other use cases would be:
+Note that you don't have sections anymore and you can access an option with a dot-access approach. Other use cases would be:
 ### Loading default settings
 ```
 default_ps_fname = 'pyconfiger/Configer/test/sample_settings.ini'
