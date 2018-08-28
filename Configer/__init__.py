@@ -64,7 +64,7 @@ class Configer(dict):
                 f.write('%s : %s\n'%(k,v))
         return True
 
-    def __add__(self, other, overload=True):
+    def __add__(self, other, overload=False):
         '''
         Add two pyconfiger classes to get a new one. This can be usefull if one needs to keep seperate default configurations
         :param other: the other pyconfiger class
