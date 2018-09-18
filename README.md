@@ -49,3 +49,9 @@ print(ps3.othersetting) # 'this'
 ps4 = ps1.overload(ps2)
 print(ps4.status) # True
 ```
+### Dumping current Configer instance as an *.ini* file
+```
+ps = Configer(default_ps_fname=default_ps_fname, status=False)
+print(ps.status) # False
+ps.dump_settings(fname='~/settings.ini') # saves the settings to the specified file
+```
