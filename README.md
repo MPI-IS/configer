@@ -57,5 +57,8 @@ ps.dump_settings(fname='~/settings.ini') # saves the settings to the specified f
 ```
 
 *Requirements*
+
 You need ConfigParser as a requirement for using Configer:
-```pip install configparser```
+```
+pip install configparser
+```
