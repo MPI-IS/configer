@@ -55,3 +55,7 @@ ps = Configer(default_ps_fname=default_ps_fname, status=False)
 print(ps.status) # False
 ps.dump_settings(fname='~/settings.ini') # saves the settings to the specified file
 ```
+
+*Requirements*
+You need ConfigParser as a requirement for using Configer:
+```pip install configparser```

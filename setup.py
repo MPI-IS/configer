@@ -15,9 +15,9 @@
 from distutils.core import setup
 
 setup(name='configer',
-      version='0.9',
+      version='1.0',
       packages=['configer'],
-      package_data={'configer': ['test/*.py','test/*.ini', '../README.md']},
+      package_data={'configer': ['../test/*.py','../test/*.ini', '../README.md']},
       author='Nima Ghorbani',
       author_email='nima.gbani@gmail.com',
       maintainer='Nima Ghorbani',
@@ -27,6 +27,7 @@ setup(name='configer',
       long_description=open("README.md").read(),
       long_description_content_type="text/markdown",
       license=u"GNU Affero General Public License, version 3",
+      install_requires=['configparser',],
       classifiers=[
           "Intended Audience :: Developers",
           'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
