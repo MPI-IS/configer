@@ -12,13 +12,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+from configer import Configer
+
+import pkg_resources
 import unittest
 
 class TestConfiger(unittest.TestCase):
      def test_configer(self):
-         from configer import Configer
-         default_ps_fname = 'sample_settings.ini'
 
+         default_ps_fname = pkg_resources.resource_filename('tests', 'sample_settings.ini')
 
          ps1 = Configer(default_ps_fname=default_ps_fname)
          self.assertEqual(ps1.status, None)
@@ -42,6 +44,3 @@ class TestConfiger(unittest.TestCase):
 
          ps6 = ps4.overload(ps3)
          self.assertEqual(ps6.status,False)
-
-if __name__ == '__main__':
-    unittest.main()
