@@ -12,12 +12,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from distutils.core import setup
+try:
+    from setuptools import setup, convert_path
+except ImportError:
+    from distutils.core import setup
 
 setup(name='configer',
       version='1.0',
       packages=['configer'],
-      package_data={'configer': ['../test/*.py','../test/*.ini', '../README.md']},
+      package_data={'tests': ['./sample_settings.ini']},
       author='Nima Ghorbani',
       author_email='nima.gbani@gmail.com',
       maintainer='Nima Ghorbani',
@@ -39,10 +42,5 @@ setup(name='configer',
           "Operating System :: Microsoft :: Windows",
           "Programming Language :: Python",
           "Programming Language :: Python :: 2",
-          "Programming Language :: Python :: 2.7",
-          "Programming Language :: Python :: 3",
-          "Programming Language :: Python :: 3.3",
-          "Programming Language :: Python :: 3.4",
-          "Programming Language :: Python :: 3.5",
-          "Programming Language :: Python :: 3.6"],
+          "Programming Language :: Python :: 2.7",],
       )
