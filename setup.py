@@ -18,7 +18,7 @@ except ImportError:
     from distutils.core import setup
 
 setup(name='configer',
-      version='1.1',
+      version='1.2.1',
       packages=['configer'],
       package_data={'tests': ['./sample_settings.ini']},
       author='Nima Ghorbani',

@@ -13,7 +13,7 @@
 # limitations under the License.
 
 import configparser
-# import ConfigParser
+
 import itertools
 from ast import literal_eval
 
@@ -37,12 +37,15 @@ class Configer(dict):
             if self.default_ps:
                 if name in self.default_ps.keys():
                     try:
-                        return_val = literal_eval(self.default_ps[name])
-                    except:
+                        try:
+                            return_val = literal_eval(self.default_ps[name])
+                        except ValueError:
+                            raise(ValueError('Unrecognized value for %s. hint: avoid operations in config file.'%name))
+                    except KeyError:
                         return_val = self.default_ps[name]
                     self[name] = return_val
                     return return_val
-            raise(ValueError('Key %s not exising.'%name))
+            raise(AttributeError('Key %s not exising.'%name))
 
     def __setattr__(self, name, value):
         self[name] = value
