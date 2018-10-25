@@ -37,11 +37,9 @@ class Configer(dict):
             if self.default_ps:
                 if name in self.default_ps.keys():
                     try:
-                        try:
-                            return_val = literal_eval(self.default_ps[name])
-                        except ValueError:
-                            raise(ValueError('Unrecognized value for %s. hint: avoid operations in config file.'%name))
-                    except KeyError:
+                        return_val = literal_eval(self.default_ps[name])
+                    except (ValueError, SyntaxError) as e:
+                        #sys.stderr.write('Unable to evaluatie value for %s in Configer.\n' % name)
                         return_val = self.default_ps[name]
                     self[name] = return_val
                     return return_val
