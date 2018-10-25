@@ -43,4 +43,4 @@ class TestConfiger(unittest.TestCase):
          self.assertEqual(ps5.somethings, [1.0, 2.0])
 
          ps6 = ps4.overload(ps3)
-         self.assertEqual(ps6.status,False)
+         self.assertEqual(ps6.status,True)

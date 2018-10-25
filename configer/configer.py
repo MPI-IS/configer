@@ -12,7 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import ConfigParser
+import configparser
+# import ConfigParser
 import itertools
 from ast import literal_eval
 
@@ -20,7 +21,7 @@ class Configer(dict):
     def __init__(self, default_ps_fname=None, **kwargs):
         super(Configer, self).__init__(**kwargs)
         if default_ps_fname:
-            parser = ConfigParser.ConfigParser()
+            parser = configparser.ConfigParser()
             parser.optionxform = str
 
             parser.read(default_ps_fname)
@@ -85,7 +86,7 @@ class Configer(dict):
         :param overload: if True existing keys will be overloaded. if False only new keys will be replaced.
         :return:
         '''
-        current = self.copy()
+        current = self._get_as_dict()
         for k, v in other._get_as_dict().iteritems():
             if overload:
                 current[k] = other[k]
@@ -101,6 +102,5 @@ class Configer(dict):
         :param overload: if True existing keys will be overloaded. if False only new keys will be replaced.
         :return:
         '''
-        self.__add__(other, overload=True)
 
-        return self
+        return self.__add__(other, overload=True)
