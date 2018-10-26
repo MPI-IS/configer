@@ -50,7 +50,7 @@ class Configer(dict):
 
     def __delattr__(self, name):
         if name in self:
-            del self[name]
+            _ = self.pop(name)
         else:
             raise AttributeError("No such attribute: " + name)
 

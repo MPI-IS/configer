@@ -23,24 +23,24 @@ class TestConfiger(unittest.TestCase):
          default_ps_fname = pkg_resources.resource_filename('tests', 'sample_settings.ini')
 
          ps1 = Configer(default_ps_fname=default_ps_fname)
-         self.assertEqual(ps1.status, None)
+         self.assertIsNone(ps1.status)
 
          ps2 = Configer(default_ps_fname=default_ps_fname, status=False)
-         self.assertEqual(ps2.status, False)
+         self.assertFalse(ps2.status)
          ps2.status = True
-         self.assertEqual(ps2.status, True)
+         self.assertTrue(ps2.status)
          ps2.new_status = True
-         self.assertEqual(ps2.new_status, True)
+         self.assertTrue(ps2.new_status)
 
          ps3 = Configer(default_ps_fname=default_ps_fname, **{'status': True})
-         self.assertEqual(ps3.status, True)
+         self.assertTrue(ps3.status)
 
          ps4 = Configer(default_ps_fname=default_ps_fname, status=False,**{'somethings': [1.0, 2.0]})
-         self.assertEqual(ps4.status, False)
+         self.assertFalse(ps4.status)
 
          ps5 = ps4 + ps3
-         self.assertEqual(ps5.status,False)
+         self.assertFalse(ps5.status)
          self.assertEqual(ps5.somethings, [1.0, 2.0])
 
          ps6 = ps4.overload(ps3)
-         self.assertEqual(ps6.status,True)
+         self.assertTrue(ps6.status)
