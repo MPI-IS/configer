@@ -26,7 +26,7 @@ class Configer(dict):
 
             parser.read(default_ps_fname)
             self.default_ps = dict(list(itertools.chain(*[parser.items(section) for section in parser.sections()])))
-            for k,v in self.default_ps.iteritems():_ = self.__getattr__(k)
+            for k,v in self.default_ps.items():_ = self.__getattr__(k)
         else:
             self.default_ps = None
 
