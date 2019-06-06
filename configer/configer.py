@@ -76,7 +76,7 @@ class Configer(dict):
         '''
         with open(fname,'w') as f:
             f.write('[All]\n')
-            for k,v in self._get_as_dict().iteritems():
+            for k,v in self._get_as_dict().items():
                 f.write('%s : %s\n'%(k,v))
         return True
 
@@ -88,7 +88,7 @@ class Configer(dict):
         :return:
         '''
         current = self._get_as_dict()
-        for k, v in other._get_as_dict().iteritems():
+        for k, v in other._get_as_dict().items():
             if overload:
                 current[k] = other[k]
             else:
