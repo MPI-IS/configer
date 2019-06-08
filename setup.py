@@ -18,7 +18,7 @@ except ImportError:
     from distutils.core import setup
 
 setup(name='configer',
-      version='1.2.4',
+      version='1.3.0',
       packages=['configer'],
       package_data={'tests': ['./sample_settings.ini']},
       author='Nima Ghorbani',
@@ -42,5 +42,8 @@ setup(name='configer',
           "Operating System :: Microsoft :: Windows",
           "Programming Language :: Python",
           "Programming Language :: Python :: 2",
-          "Programming Language :: Python :: 2.7",],
+          "Programming Language :: Python :: 2.7",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3.7",
+      ],
       )
