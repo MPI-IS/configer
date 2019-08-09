@@ -27,9 +27,12 @@ The only dependency is **configparser** and will be installed automatically by t
 
 Installation
 ------------
-
-In the root directory, type in
+You can install directly from the git repository
+```bash
+pip install git+https://github.com/nghorbani/configer
 ```
+Or after cloning this repo, in the root directory, type in
+```bash
 pip install .
 ```
 
