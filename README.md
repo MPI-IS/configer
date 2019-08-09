@@ -22,8 +22,7 @@ That's why I packaged my solution to this issue. Configer basically gives you a 
 Dependencies
 ------------
 
-This package is written for **Python 2.7**.
-The only dependency is **configparser** and will be installed automatically by the ``setup.py``.
+This package supports **Python 2.7 and 3.5+**.
 
 Installation
 ------------
