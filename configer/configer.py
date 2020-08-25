@@ -64,12 +64,12 @@ class Configer(dict):
             raise AttributeError("No such attribute: " + name)
 
     def __repr__(self):
-        return str(self._get_as_dict())
+        return str(self.get_as_dict())
 
     def __str__(self):
-        return str(self._get_as_dict())
+        return str(self.get_as_dict())
 
-    def _get_as_dict(self):
+    def get_as_dict(self):
         res = {}
         keys = sorted(self.keys())
         for k in keys:
@@ -85,7 +85,7 @@ class Configer(dict):
         '''
         with open(fname,'w') as f:
             f.write('[All]\n')
-            for k,v in self._get_as_dict().items():
+            for k,v in self.get_as_dict().items():
                 if isinstance(v, str):v = v.replace('\n', ' ')
                 f.write('%s : %s\n'%(k,v))
         return True
@@ -97,8 +97,8 @@ class Configer(dict):
         :param overload: if True existing keys will be overloaded. if False only new keys will be replaced.
         :return:
         '''
-        current = self._get_as_dict()
-        for k, v in other._get_as_dict().items():
+        current = self.get_as_dict()
+        for k, v in other.get_as_dict().items():
             if overload:
                 current[k] = other[k]
             else:
