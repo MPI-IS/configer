@@ -28,7 +28,7 @@ Installation
 ------------
 You can install directly from the git repository
 ```bash
-pip install git+https://github.com/nghorbani/configer
+pip install git+https://github.com/MPI-IS/configer
 ```
 Examples
 --------
